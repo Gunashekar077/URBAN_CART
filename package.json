@@ -1,0 +1,16 @@
+{
+  "name": "urbancart-monorepo",
+  "version": "1.0.0",
+  "description": "Root runner for UrbanCart Frontend and Backend",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix simple-product-app",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix simple-product-app",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix simple-product-app\"",
+    "start": "concurrently \"npm start --prefix backend\" \"npm run dev --prefix simple-product-app\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
